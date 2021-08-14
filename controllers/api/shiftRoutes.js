@@ -7,10 +7,10 @@ router.get( '/', async (req, res) => {
 
 } );
 
-router.post( '/', async (req, res) => {
+// router.post( '/', async (req, res) => {
 
-    // res.json( await Shift.findAll() );
+//     // res.json( await Shift.findAll() );
 
-} );
+// } );
 
 module.exports = router;
