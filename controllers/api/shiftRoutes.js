@@ -4,16 +4,7 @@ const withAuthApi = require('../middleware/withAuthApi');
 
 router.get( '/', async (req, res) => {
 
-    res.json( await Shift.findAll({
-        attributes: {
-            exclude: ['owner_id']
-        },
-        include: {
-            model: User,
-            attributes: ['id','name']
-        },
-
-    }) );
+    res.json( await Shift.findWithUser() );
 
 } );
 
