@@ -1,0 +1,34 @@
+<div
+
+ class="row align-center mb-5">
+  <div class="col-sm-6">
+      <h2>Shifts available to swap</h2>
+      <div class="list-group">
+        {{#each availableShifts}}
+            <div class="list-group-item row">
+              <span class="col">
+                {{user.name}}
+              </span>
+              <span class="col">
+                {{format_date start_date}}
+              </span>
+              <span class="col">
+                {{format_date end_date}}
+              </span class="col">
+              <span class="col">
+              {{#if is_swappable}}
+                <span class="badge bg-success">Swapping!</span>
+              {{else}}
+                <span class="badge bg-secondary">Closed</span>
+              {{/if}}
+              </span>
+              <span class="col">
+                <a href="/swap/{{id}}" class="btn btn-primary">
+                  Offer Trade
+                </a>
+              </span>
+            </div>
+        {{/each}}
+      </div>
+  </div>
+</div>

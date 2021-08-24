@@ -1,0 +1,39 @@
+<div class="list-group">
+    <div class="list-group-item row">
+        <span class="col">
+        {{shift.user.name}}
+        </span>
+        <span class="col">
+        {{format_date shift.start_date}}
+        </span>
+        <span class="col">
+        {{format_date shift.end_date}}
+        </span class="col">
+        <span class="col">
+        {{#if shift.is_swappable}}
+        <span class="badge bg-success">Swapping!</span>
+        {{else}}
+        <span class="badge bg-secondary">Closed</span>
+        {{/if}}
+        </span>
+    </div>
+</div>
+<div class="card row my-5">
+      <div class="card-body">
+        <form class="form" id="swap-form">
+          <div class="form-group mb-3">
+            <label for="shiftOffer" class="form-label">Select a shift to trade</label>
+            <select id="shiftOffer" class="form-control">
+                {{#each userShifts}}
+                <option value="{{id}}">{{format_date start_date}} - {{format_date end_date}}</option>
+                {{/each}}
+            </select>
+            <input type="hidden" id="shiftWanted" value="{{shift.id}}" />
+            <button class="btn btn-primary mt-3">
+              Offer Trade
+            </button>
+        </div>  
+        </form>
+      </div>
+</div>
+<script src="/js/createOffer.js"></script>

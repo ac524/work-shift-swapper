@@ -1,8 +1,9 @@
 const sequelize = require('../config/connection');
-const { User, Shift } = require('../models');
+const { User, Shift, Offer } = require('../models');
 
 const userData = require('./userData.json');
 const shiftData = require('./shiftData.json');
+const offerData = require('./offerData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -18,6 +19,11 @@ const seedDatabase = async () => {
     start_date: new Date( shift.start_date ),
     end_date: new Date( shift.end_date )
   })) ,{
+    individualHooks: true,
+    returning: true,
+  });
+
+  await Offer.bulkCreate(offerData, {
     individualHooks: true,
     returning: true,
   });

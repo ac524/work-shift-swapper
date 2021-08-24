@@ -1,23 +1,27 @@
 [
   {
+    "id": 1,
     "owner_id": 1,
     "is_swappable": true,
     "start_date": "8/17/2021 12:00 PM",
     "end_date": "8/17/2021 5:00 PM"
   },
   {
+    "id": 2,
     "owner_id": 2,
     "is_swappable": true,
     "start_date": "8/18/2021 12:00 PM",
     "end_date": "8/18/2021 5:00 PM"
   },
   {
+    "id": 3,
     "owner_id": 3,
     "is_swappable": true,
     "start_date": "8/19/2021 12:00 PM",
     "end_date": "8/19/2021 5:00 PM"
   },
   {
+    "id": 4,
     "owner_id": 1,
     "is_swappable": true,
     "start_date": "8/20/2021 12:00 PM",

@@ -1,0 +1,11 @@
+
+[
+    {
+        "offered_shift": 1,
+        "wanted_shift": 2
+    },
+    {
+        "offered_shift": 3,
+        "wanted_shift": 4
+    }
+]
