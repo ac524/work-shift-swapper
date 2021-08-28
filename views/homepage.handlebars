@@ -24,16 +24,75 @@
         {{/each}}
       </div>
       <h2>My Offers</h2>
-      <div class="list-group">
-        {{#each myOffers}}
+        {{#each offeredShifts}}
+          <div class="list-group my-3">
+              <div class="list-group-item row">
+                    <span class="col">
+                      <strong>My Offer</strong>
+                    </span>
+                    <span class="col">
+                    {{shift_offered.user.name}}
+                    </span>
+                    <span class="col">
+                      {{format_date shift_offered.start_date}}
+                    </span>
+                    <span class="col">
+                      {{format_date shift_offered.end_date}}
+                    </span class="col">
+                </div>
+
+              <div class="list-group-item row">
+
+                    <span class="col">
+                      <strong>Trading For</strong>
+                    </span>
+                    <span class="col">
+                    {{shift_wanted.user.name}}
+                    </span>
+                    <span class="col">
+                      {{format_date shift_wanted.start_date}}
+                    </span>
+                    <span class="col">
+                      {{format_date shift_wanted.end_date}}
+                    </span class="col">
+                </div>
+          </div>
         {{/each}}
-      </div>
 
       <h2>Requested Trades</h2>
-      <div class="list-group">
-        {{#each offers}}
+      {{#each wantedShifts}}
+          <div class="list-group my-3">
+              <div class="list-group-item row">
+
+                    <span class="col">
+                      <strong>My Shift</strong>
+                    </span>
+                    <span class="col">
+                    {{shift_wanted.user.name}}
+                    </span>
+                    <span class="col">
+                      {{format_date shift_wanted.start_date}}
+                    </span>
+                    <span class="col">
+                      {{format_date shift_wanted.end_date}}
+                    </span class="col">
+                </div>
+              <div class="list-group-item row">
+                    <span class="col">
+                      <strong>Offered Shift</strong>
+                    </span>
+                    <span class="col">
+                    {{shift_offered.user.name}}
+                    </span>
+                    <span class="col">
+                      {{format_date shift_offered.start_date}}
+                    </span>
+                    <span class="col">
+                      {{format_date shift_offered.end_date}}
+                    </span class="col">
+                </div>
+          </div>
         {{/each}}
-      </div>
   </div>  
   <div class="col-sm-6">
       <h2>Create a new shift to swap</h2>

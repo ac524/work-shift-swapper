@@ -12,15 +12,15 @@ router.get('/', withAuth, async (req, res) => {
     }
   });
 
-  const rawMyOffers = await Offer.findOffered( req.session.user_id );
+  const rawOfferedShifts = await Offer.findOffered( req.session.user_id );
 
-  const rawOffer = await Offer.findWanted( req.session.user_id );
+  const rawWantedShifts = await Offer.findWanted( req.session.user_id );
 
   // Send the rendered Handlebars.js template back as the response
   res.render('homepage', {
     userShifts: rawUserShifts.map( shift => shift.get({plain: true}) ),
-    myOffer: rawMyOffers.map( shift => shift.get({plain: true}) ),
-    offers: rawOffer.map( shift => shift.get({plain: true}) ),
+    offeredShifts: rawOfferedShifts.map( shift => shift.get({plain: true}) ),
+    wantedShifts: rawWantedShifts.map( shift => shift.get({plain: true}) ),
     logged_in: req.session.logged_in
   });
 
